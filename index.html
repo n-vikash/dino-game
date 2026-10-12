@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#10291f" />
+  <meta name="description" content="Jungle Dino Escape — a 3D prehistoric endless runner." />
+  <title>Jungle Dino Escape</title>
+</head>
+<body>
+  <div id="app">
+    <div id="game"></div>
+    <div class="vignette"></div>
+    <div id="cinematicBars" class="cinematic-bars" aria-hidden="true"><span></span><span></span></div>
+    <div id="encounterBanner" class="encounter-banner" aria-live="polite">PREDATOR DETECTED <small>RUN. DO NOT LOOK BACK.</small></div>
+    <header class="hud" id="hud" aria-live="polite">
+      <div class="hud-brand"><span class="brand-dot"></span><span>JUNGLE <b>ESCAPE</b></span></div>
+      <div class="hud-stats">
+        <div><small>DISTANCE</small><strong id="distance">0 <i>m</i></strong></div>
+        <div><small>SCORE</small><strong id="score">000000</strong></div>
+        <div><small>COINS</small><strong id="coins">0</strong></div>
+      </div>
+      <button id="pauseBtn" class="icon-button" aria-label="Pause game">Ⅱ</button>
+    </header>
+
+    <section id="startScreen" class="screen">
+      <div class="screen-glow"></div>
+      <div class="eyebrow"><span></span> A PREHISTORIC SURVIVAL RUN <span></span></div>
+      <h1>JUNGLE <em>DINO</em><br>ESCAPE</h1>
+      <p class="tagline">The wild is awake. Keep running.</p>
+      <div class="feature-row"><span>✦ 3D JUNGLE</span><span>✦ DINOSAUR CHASE</span><span>✦ ENDLESS RUN</span></div>
+      <button id="playBtn" class="primary-button">START RUN <span>↗</span></button>
+      <button id="howBtn" class="text-button">HOW TO SURVIVE</button>
+      <div class="best-score">PERSONAL BEST <b id="bestStart">000000</b></div>
+    </section>
+
+    <section id="helpScreen" class="screen hidden">
+      <div class="panel">
+        <div class="eyebrow">FIELD GUIDE</div><h2>Stay alive.</h2>
+        <div class="guide-row"><kbd>←</kbd><kbd>→</kbd><span>Change lanes</span></div>
+        <div class="guide-row"><kbd>SPACE</kbd><kbd>↑</kbd><span>Jump over logs and rocks</span></div>
+        <div class="guide-row"><kbd>↓</kbd><kbd>S</kbd><span>Slide under low branches</span></div>
+        <p>On mobile, use the on-screen controls. Two hits and the jungle wins.</p>
+        <button id="backBtn" class="primary-button">GOT IT</button>
+      </div>
+    </section>
+
+    <section id="pauseScreen" class="screen hidden">
+      <div class="panel compact"><div class="eyebrow">TAKE A BREATH</div><h2>Run paused</h2><button id="resumeBtn" class="primary-button">RESUME RUN</button><button id="restartPauseBtn" class="text-button">RESTART RUN</button></div>
+    </section>
+
+    <section id="overScreen" class="screen hidden">
+      <div class="panel compact"><div class="eyebrow danger">CHASE ENDED</div><h2>The jungle wins.</h2><div class="result-grid"><div><small>YOUR SCORE</small><strong id="finalScore">0</strong></div><div><small>DISTANCE</small><strong id="finalDistance">0 m</strong></div><div><small>COINS</small><strong id="finalCoins">0</strong></div></div><button id="retryBtn" class="primary-button">RUN IT BACK <span>↗</span></button><button id="campBtn" class="text-button">BACK TO CAMP</button></div>
+    </section>
+
+    <div id="mobileControls" class="mobile-controls">
+      <div class="control-cluster"><button data-action="left" aria-label="Move left">‹</button><button data-action="right" aria-label="Move right">›</button></div>
+      <div class="control-cluster"><button data-action="jump" aria-label="Jump">↑</button><button data-action="slide" aria-label="Slide">↓</button></div>
+    </div>
+    <div class="bottom-hint" id="bottomHint">ARROWS TO MOVE <span>•</span> SPACE TO JUMP <span>•</span> DOWN TO SLIDE</div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
